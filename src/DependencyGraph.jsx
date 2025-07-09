@@ -1,5 +1,30 @@
 import React, { useMemo, useState } from 'react';
 import ReactFlow, { Background, Controls, MiniMap } from 'react-flow-renderer';
+import dagre from 'dagre';
+// Tree layout using dagre
+function getNodesTree(packages, idToLabel, edges) {
+  const g = new dagre.graphlib.Graph();
+  g.setGraph({ rankdir: 'TB', nodesep: 50, ranksep: 100 });
+  g.setDefaultEdgeLabel(() => ({}));
+  packages.forEach(pkg => {
+    g.setNode(pkg.SPDXID, { label: idToLabel[pkg.SPDXID], width: 120, height: 40 });
+  });
+  edges.forEach(edge => {
+    g.setEdge(edge.source, edge.target);
+  });
+  dagre.layout(g);
+  return packages.map(pkg => {
+    const nodeWithPos = g.node(pkg.SPDXID);
+    return {
+      id: pkg.SPDXID,
+      data: { label: idToLabel[pkg.SPDXID] },
+      position: {
+        x: nodeWithPos.x,
+        y: nodeWithPos.y,
+      },
+    };
+  });
+}
 
 
 function getNodesCircular(packages, idToLabel) {
@@ -54,14 +79,6 @@ function parseSpdxToGraph(data, layout) {
   data.packages.forEach(pkg => {
     idToLabel[pkg.SPDXID] = pkg.name + (pkg.versionInfo ? `@${pkg.versionInfo}` : '');
   });
-  let nodes = [];
-  if (layout === 'grid') {
-    nodes = getNodesGrid(data.packages, idToLabel);
-  } else if (layout === 'linear') {
-    nodes = getNodesLinear(data.packages, idToLabel);
-  } else {
-    nodes = getNodesCircular(data.packages, idToLabel);
-  }
   const edges = data.relationships
     .filter(rel => rel.relationshipType === 'DEPENDS_ON')
     .map(rel => ({
@@ -70,6 +87,16 @@ function parseSpdxToGraph(data, layout) {
       target: rel.relatedSpdxElement,
       animated: true,
     }));
+  let nodes = [];
+  if (layout === 'grid') {
+    nodes = getNodesGrid(data.packages, idToLabel);
+  } else if (layout === 'linear') {
+    nodes = getNodesLinear(data.packages, idToLabel);
+  } else if (layout === 'tree') {
+    nodes = getNodesTree(data.packages, idToLabel, edges);
+  } else {
+    nodes = getNodesCircular(data.packages, idToLabel);
+  }
   return { nodes, edges };
 }
 
@@ -85,6 +112,7 @@ const DependencyGraph = ({ data }) => {
           <option value="circular">Circular</option>
           <option value="grid">Grid</option>
           <option value="linear">Linear</option>
+          <option value="tree">Tree</option>
         </select>
       </div>
       <ReactFlow nodes={nodes} edges={edges} fitView>
