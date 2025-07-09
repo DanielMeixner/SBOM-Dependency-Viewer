@@ -1,5 +1,8 @@
 
+
 # Dependency Graph Viewer
+
+👉 **Try the web version here:** [https://danielmeixner.github.io/sbomdepsviewer/](https://danielmeixner.github.io/sbomdepsviewer/)
 
 A browser and desktop (Electron) app for visualizing and analyzing software dependency graphs from SPDX JSON files. The app provides multiple graph layouts and checks the health of dependencies using OSS Index.
 
