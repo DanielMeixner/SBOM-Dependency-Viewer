@@ -1,0 +1,723 @@
+{
+    "spdxVersion": "SPDX-2.3",
+    "dataLicense": "CC0-1.0",
+    "SPDXID": "SPDXRef-DOCUMENT",
+    "name": "com.github.octodemo/bookstore-curly-octo-journey",
+    "documentNamespace": "https://spdx.org/spdxdocs/protobom/8334ce8d-2323-43ae-aa62-5b3a58258fd5",
+    "creationInfo": {
+        "creators": [
+            "Tool: protobom-v0.0.0-20250708203058-40524f93061f+dirty",
+            "Tool: GitHub.com-Dependency-Graph",
+            "Tool: maven-dependency-submission-action"
+        ],
+        "created": "2025-07-09T07:57:18Z"
+    },
+    "packages": [
+        {
+            "name": "org.eclipse.jetty:jetty-security",
+            "SPDXID": "SPDXRef-maven-org.eclipse.jetty-jetty-security-10.0.0-904d83",
+            "versionInfo": "10.0.0",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.eclipse.jetty/jetty-security@10.0.0?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.javassist:javassist",
+            "SPDXID": "SPDXRef-maven-org.javassist-javassist-3.20.0-GA-8e04c6",
+            "versionInfo": "3.20.0-GA",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.javassist/javassist@3.20.0-GA?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.attoparser:attoparser",
+            "SPDXID": "SPDXRef-maven-org.attoparser-attoparser-2.0.5.RELEASE-9900d0",
+            "versionInfo": "2.0.5.RELEASE",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.attoparser/attoparser@2.0.5.RELEASE?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.apache.logging.log4j:log4j-slf4j18-impl",
+            "SPDXID": "SPDXRef-maven-org.apache.logging.log4j-log4j-slf4j18-impl-2.17.2-e690c6",
+            "versionInfo": "2.17.2",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.apache.logging.log4j/log4j-slf4j18-impl@2.17.2?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.eclipse.jetty:jetty-util",
+            "SPDXID": "SPDXRef-maven-org.eclipse.jetty-jetty-util-10.0.0-f0a931",
+            "versionInfo": "10.0.0",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.eclipse.jetty/jetty-util@10.0.0?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.hamcrest:hamcrest-core",
+            "SPDXID": "SPDXRef-maven-org.hamcrest-hamcrest-core-1.3-7b24c2",
+            "versionInfo": "1.3",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.hamcrest/hamcrest-core@1.3?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.thymeleaf:thymeleaf",
+            "SPDXID": "SPDXRef-maven-org.thymeleaf-thymeleaf-3.0.12.RELEASE-6eff60",
+            "versionInfo": "3.0.12.RELEASE",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.thymeleaf/thymeleaf@3.0.12.RELEASE?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.xerial:sqlite-jdbc",
+            "SPDXID": "SPDXRef-maven-org.xerial-sqlite-jdbc-3.32.3.2-602fc1",
+            "versionInfo": "3.32.3.2",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.xerial/sqlite-jdbc@3.32.3.2?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.slf4j:slf4j-api",
+            "SPDXID": "SPDXRef-maven-org.slf4j-slf4j-api-2.0.0-alpha1-b13840",
+            "versionInfo": "2.0.0-alpha1",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.slf4j/slf4j-api@2.0.0-alpha1?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.eclipse.jetty:jetty-servlet",
+            "SPDXID": "SPDXRef-maven-org.eclipse.jetty-jetty-servlet-10.0.0-46fbe8",
+            "versionInfo": "10.0.0",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.eclipse.jetty/jetty-servlet@10.0.0?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "junit:junit",
+            "SPDXID": "SPDXRef-maven-junit-junit-4.13-38d265",
+            "versionInfo": "4.13",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/junit/junit@4.13?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.apache.logging.log4j:log4j-api",
+            "SPDXID": "SPDXRef-maven-org.apache.logging.log4j-log4j-api-2.17.2-c082ef",
+            "versionInfo": "2.17.2",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.apache.logging.log4j/log4j-api@2.17.2?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.eclipse.jetty:jetty-io",
+            "SPDXID": "SPDXRef-maven-org.eclipse.jetty-jetty-io-10.0.0-685c50",
+            "versionInfo": "10.0.0",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.eclipse.jetty/jetty-io@10.0.0?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.eclipse.jetty:jetty-server",
+            "SPDXID": "SPDXRef-maven-org.eclipse.jetty-jetty-server-10.0.0-9bac46",
+            "versionInfo": "10.0.0",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.eclipse.jetty/jetty-server@10.0.0?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.eclipse.jetty.toolchain:jetty-servlet-api",
+            "SPDXID": "SPDXRef-maven-org.eclipse.jetty.toolchain-jetty-servlet-api-4.0.5-216fda",
+            "versionInfo": "4.0.5",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.eclipse.jetty.toolchain/jetty-servlet-api@4.0.5?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.eclipse.jetty:jetty-http",
+            "SPDXID": "SPDXRef-maven-org.eclipse.jetty-jetty-http-10.0.0-5946d7",
+            "versionInfo": "10.0.0",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.eclipse.jetty/jetty-http@10.0.0?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.unbescape:unbescape",
+            "SPDXID": "SPDXRef-maven-org.unbescape-unbescape-1.1.6.RELEASE-d946e9",
+            "versionInfo": "1.1.6.RELEASE",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.unbescape/unbescape@1.1.6.RELEASE?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.apache.logging.log4j:log4j-core",
+            "SPDXID": "SPDXRef-maven-org.apache.logging.log4j-log4j-core-2.17.2-194c8e",
+            "versionInfo": "2.17.2",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.apache.logging.log4j/log4j-core@2.17.2?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "org.json:json",
+            "SPDXID": "SPDXRef-maven-org.json-json-20210307-19234a",
+            "versionInfo": "20210307",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/org.json/json@20210307?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "ognl:ognl",
+            "SPDXID": "SPDXRef-maven-ognl-ognl-3.1.26-ec36a0",
+            "versionInfo": "3.1.26",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:maven/ognl/ognl@3.1.26?type=jar"
+                }
+            ]
+        },
+        {
+            "name": "actions/dependency-review-action",
+            "SPDXID": "SPDXRef-githubactions-actions-dependency-review-action-4..-75c946",
+            "versionInfo": "4.*.*",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/actions/dependency-review-action@4.%2A.%2A"
+                }
+            ]
+        },
+        {
+            "name": "octodemo-resources/github-commit-status",
+            "SPDXID": "SPDXRef-githubactions-octodemo-resources-github-commit-status-1..-75c946",
+            "versionInfo": "1.*.*",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/octodemo-resources/github-commit-status@1.%2A.%2A"
+                }
+            ]
+        },
+        {
+            "name": "octodemo/pull-request-review-action",
+            "SPDXID": "SPDXRef-githubactions-octodemo-pull-request-review-action-main-75c946",
+            "versionInfo": "main",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/octodemo/pull-request-review-action@main"
+                }
+            ]
+        },
+        {
+            "name": "danielpalme/ReportGenerator-GitHub-Action",
+            "SPDXID": "SPDXRef-githubactions-danielpalme-ReportGenerator-GitHub-Action-5.2.0-75c946",
+            "versionInfo": "5.2.0",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/danielpalme/ReportGenerator-GitHub-Action@5.2.0"
+                }
+            ]
+        },
+        {
+            "name": "actions/setup-dotnet",
+            "SPDXID": "SPDXRef-githubactions-actions-setup-dotnet-4..-75c946",
+            "versionInfo": "4.*.*",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/actions/setup-dotnet@4.%2A.%2A"
+                }
+            ]
+        },
+        {
+            "name": "marocchino/sticky-pull-request-comment",
+            "SPDXID": "SPDXRef-githubactions-marocchino-sticky-pull-request-comment-2..-75c946",
+            "versionInfo": "2.*.*",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/marocchino/sticky-pull-request-comment@2.%2A.%2A"
+                }
+            ]
+        },
+        {
+            "name": "actions/checkout",
+            "SPDXID": "SPDXRef-githubactions-actions-checkout-4..-75c946",
+            "versionInfo": "4.*.*",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/actions/checkout@4.%2A.%2A"
+                }
+            ]
+        },
+        {
+            "name": "actions/upload-artifact",
+            "SPDXID": "SPDXRef-githubactions-actions-upload-artifact-4..-75c946",
+            "versionInfo": "4.*.*",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/actions/upload-artifact@4.%2A.%2A"
+                }
+            ]
+        },
+        {
+            "name": "actions/setup-java",
+            "SPDXID": "SPDXRef-githubactions-actions-setup-java-4..-75c946",
+            "versionInfo": "4.*.*",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/actions/setup-java@4.%2A.%2A"
+                }
+            ]
+        },
+        {
+            "name": "advanced-security/maven-dependency-submission-action",
+            "SPDXID": "SPDXRef-githubactions-advanced-security-maven-dependency-submission-action-4..-75c946",
+            "versionInfo": "4.*.*",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/advanced-security/maven-dependency-submission-action@4.%2A.%2A"
+                }
+            ]
+        },
+        {
+            "name": "actions/github-script",
+            "SPDXID": "SPDXRef-githubactions-actions-github-script-7..-75c946",
+            "versionInfo": "7.*.*",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/actions/github-script@7.%2A.%2A"
+                }
+            ]
+        },
+        {
+            "name": "octodemo-resources/bookstore-common-workflows/.github/workflows/build_and_publish_container.yml",
+            "SPDXID": "SPDXRef-githubactions-octodemo-resourcesbookstore-common-workflows.githubworkflows-buildandpublishcontainer.yml-main-75c946",
+            "versionInfo": "main",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/octodemo-resources/bookstore-common-workflows/.github/workflows/build_and_publish_container.yml@main"
+                }
+            ]
+        },
+        {
+            "name": "peter-murray/workflow-application-token-action",
+            "SPDXID": "SPDXRef-githubactions-peter-murray-workflow-application-token-action-3..-75c946",
+            "versionInfo": "3.*.*",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/peter-murray/workflow-application-token-action@3.%2A.%2A"
+                }
+            ]
+        },
+        {
+            "name": "github/codeql-action/analyze",
+            "SPDXID": "SPDXRef-githubactions-githubcodeql-action-analyze-3..-75c946",
+            "versionInfo": "3.*.*",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/github/codeql-action/analyze@3.%2A.%2A"
+                }
+            ]
+        },
+        {
+            "name": "github/codeql-action/init",
+            "SPDXID": "SPDXRef-githubactions-githubcodeql-action-init-3..-75c946",
+            "versionInfo": "3.*.*",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/github/codeql-action/init@3.%2A.%2A"
+                }
+            ]
+        },
+        {
+            "name": "octodemo-resources/bookstore-common-workflows/.github/workflows/container_vulnerability_scanning.yml",
+            "SPDXID": "SPDXRef-githubactions-octodemo-resourcesbookstore-common-workflows.githubworkflows-containervulnerabilityscanning.yml-main-75c946",
+            "versionInfo": "main",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:githubactions/octodemo-resources/bookstore-common-workflows/.github/workflows/container_vulnerability_scanning.yml@main"
+                }
+            ]
+        },
+        {
+            "name": "com.github.octodemo/bookstore-curly-octo-journey",
+            "SPDXID": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "versionInfo": "main",
+            "downloadLocation": "git+https://github.com/octodemo/bookstore-curly-octo-journey",
+            "filesAnalyzed": false,
+            "licenseDeclared": "MIT",
+            "externalRefs": [
+                {
+                    "referenceCategory": "PACKAGE-MANAGER",
+                    "referenceType": "purl",
+                    "referenceLocator": "pkg:github/octodemo/bookstore-curly-octo-journey@main"
+                }
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "spdxElementId": "SPDXRef-maven-org.apache.logging.log4j-log4j-slf4j18-impl-2.17.2-e690c6",
+            "relatedSpdxElement": "SPDXRef-maven-org.apache.logging.log4j-log4j-api-2.17.2-c082ef",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-maven-org.apache.logging.log4j-log4j-slf4j18-impl-2.17.2-e690c6",
+            "relatedSpdxElement": "SPDXRef-maven-org.apache.logging.log4j-log4j-core-2.17.2-194c8e",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-maven-org.thymeleaf-thymeleaf-3.0.12.RELEASE-6eff60",
+            "relatedSpdxElement": "SPDXRef-maven-ognl-ognl-3.1.26-ec36a0",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-maven-org.thymeleaf-thymeleaf-3.0.12.RELEASE-6eff60",
+            "relatedSpdxElement": "SPDXRef-maven-org.attoparser-attoparser-2.0.5.RELEASE-9900d0",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-maven-org.thymeleaf-thymeleaf-3.0.12.RELEASE-6eff60",
+            "relatedSpdxElement": "SPDXRef-maven-org.unbescape-unbescape-1.1.6.RELEASE-d946e9",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-maven-org.eclipse.jetty-jetty-servlet-10.0.0-46fbe8",
+            "relatedSpdxElement": "SPDXRef-maven-org.eclipse.jetty-jetty-security-10.0.0-904d83",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-maven-junit-junit-4.13-38d265",
+            "relatedSpdxElement": "SPDXRef-maven-org.hamcrest-hamcrest-core-1.3-7b24c2",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-maven-org.eclipse.jetty-jetty-server-10.0.0-9bac46",
+            "relatedSpdxElement": "SPDXRef-maven-org.eclipse.jetty.toolchain-jetty-servlet-api-4.0.5-216fda",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-maven-org.eclipse.jetty-jetty-server-10.0.0-9bac46",
+            "relatedSpdxElement": "SPDXRef-maven-org.eclipse.jetty-jetty-http-10.0.0-5946d7",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-maven-org.eclipse.jetty-jetty-server-10.0.0-9bac46",
+            "relatedSpdxElement": "SPDXRef-maven-org.eclipse.jetty-jetty-io-10.0.0-685c50",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-maven-org.eclipse.jetty-jetty-server-10.0.0-9bac46",
+            "relatedSpdxElement": "SPDXRef-maven-org.slf4j-slf4j-api-2.0.0-alpha1-b13840",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-maven-org.eclipse.jetty-jetty-http-10.0.0-5946d7",
+            "relatedSpdxElement": "SPDXRef-maven-org.eclipse.jetty-jetty-util-10.0.0-f0a931",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-maven-ognl-ognl-3.1.26-ec36a0",
+            "relatedSpdxElement": "SPDXRef-maven-org.javassist-javassist-3.20.0-GA-8e04c6",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-maven-org.apache.logging.log4j-log4j-slf4j18-impl-2.17.2-e690c6",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-maven-org.thymeleaf-thymeleaf-3.0.12.RELEASE-6eff60",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-maven-org.xerial-sqlite-jdbc-3.32.3.2-602fc1",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-maven-org.eclipse.jetty-jetty-servlet-10.0.0-46fbe8",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-maven-junit-junit-4.13-38d265",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-maven-org.eclipse.jetty-jetty-server-10.0.0-9bac46",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-maven-org.json-json-20210307-19234a",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-actions-dependency-review-action-4..-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-actions-checkout-4..-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-advanced-security-maven-dependency-submission-action-4..-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-actions-github-script-7..-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-peter-murray-workflow-application-token-action-3..-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-githubcodeql-action-analyze-3..-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-octodemo-resources-github-commit-status-1..-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-danielpalme-ReportGenerator-GitHub-Action-5.2.0-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-actions-setup-dotnet-4..-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-marocchino-sticky-pull-request-comment-2..-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-actions-upload-artifact-4..-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-octodemo-resourcesbookstore-common-workflows.githubworkflows-containervulnerabilityscanning.yml-main-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-actions-setup-java-4..-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-octodemo-resourcesbookstore-common-workflows.githubworkflows-buildandpublishcontainer.yml-main-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-octodemo-pull-request-review-action-main-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relatedSpdxElement": "SPDXRef-githubactions-githubcodeql-action-init-3..-75c946",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-DOCUMENT",
+            "relatedSpdxElement": "SPDXRef-github-octodemo-bookstore-curly-octo-journey-main-c31144",
+            "relationshipType": "DESCRIBES"
+        }
+    ]
+}
