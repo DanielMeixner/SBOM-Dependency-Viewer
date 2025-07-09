@@ -1,6 +1,6 @@
 {
   "name": "sbomdepsviewer",
-  "version": "1.0.0",
+  "version": "1.0.11",
   "description": "A viewer for SBOM dependency graphs, available as a web app and Electron app.",
   "author": "Daniel Meixner <daniel.meixner@live.com>",
   "license": "MIT",
