@@ -1,0 +1,22 @@
+{
+  "appId": "com.example.sbomdepsviewer",
+  "productName": "SBOM Dependency Graph Viewer",
+  "directories": {
+    "output": "dist_electron"
+  },
+  "files": [
+    "dist/**",
+    "main.js",
+    "package.json"
+  ],
+  "extraResources": [],
+  "mac": {
+    "target": ["dmg", "zip"]
+  },
+  "win": {
+    "target": ["nsis", "zip"]
+  },
+  "linux": {
+    "target": ["AppImage", "deb", "zip"]
+  }
+}

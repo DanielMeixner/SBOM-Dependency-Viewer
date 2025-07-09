@@ -7,7 +7,11 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "npm run build && npx gh-pages -d dist",
-    "electron": "VITE_ELECTRON=true vite build && electron ."
+    "electron": "VITE_ELECTRON=true vite build && electron .",
+    "dist:win": "npx electron-builder --win",
+    "dist:mac": "npx electron-builder --mac",
+    "dist:linux": "npx electron-builder --linux",
+    "dist:all": "npx electron-builder --win --mac --linux"
   },
   "dependencies": {
     "dagre": "^0.8.5",
@@ -18,6 +22,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
     "electron": "^29.0.0",
+    "electron-builder": "^24.14.1",
     "gh-pages": "^6.0.0",
     "vite": "^5.0.0"
   },
