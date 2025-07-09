@@ -25,6 +25,8 @@ jobs:
           VITE_ELECTRON: true
       - name: Build Electron app
         run: npx electron-builder --${{ matrix.os == 'windows-latest' && 'win' || matrix.os == 'macos-latest' && 'mac' || 'linux' }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
