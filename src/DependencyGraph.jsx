@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import ReactFlow, { Background, Controls, MiniMap } from 'react-flow-renderer';
 import dagre from 'dagre';
+import useDependencyHealth from './useDependencyHealth';
 // Tree layout using dagre
 function getNodesTree(packages, idToLabel, edges) {
   const g = new dagre.graphlib.Graph();
@@ -104,6 +105,32 @@ function parseSpdxToGraph(data, layout) {
 const DependencyGraph = ({ data }) => {
   const [layout, setLayout] = useState('circular');
   const { nodes, edges } = useMemo(() => parseSpdxToGraph(data, layout), [data, layout]);
+  const { health, loading, error } = useDependencyHealth(data.packages);
+
+  // Enhance node color based on health
+  const nodesWithHealth = nodes.map(node => {
+    // Find purl for this node
+    const pkg = data.packages.find(p => p.SPDXID === node.id);
+    const ref = pkg && pkg.externalRefs ? pkg.externalRefs.find(r => r.referenceType === 'purl') : null;
+    const purl = ref ? ref.referenceLocator : null;
+    let color = '#90ee90'; // healthy default
+    let title = node.data.label;
+    if (purl && health[purl]) {
+      if (health[purl].vulnerabilities && health[purl].vulnerabilities.length > 0) {
+        color = '#ffb3b3'; // red for vulnerable
+        title += `\nVulnerabilities: ${health[purl].vulnerabilities.length}`;
+      } else if (health[purl].latestVersion && pkg.versionInfo && health[purl].latestVersion !== pkg.versionInfo) {
+        color = '#ffe066'; // yellow for outdated
+        title += `\nOutdated: latest is ${health[purl].latestVersion}`;
+      }
+    }
+    return {
+      ...node,
+      style: { background: color, border: '1px solid #888' },
+      data: { ...node.data, title },
+    };
+  });
+
   return (
     <div style={{ width: '100%', height: '80vh', border: '1px solid #ccc', marginTop: 24 }}>
       <div style={{ marginBottom: 12 }}>
@@ -114,8 +141,10 @@ const DependencyGraph = ({ data }) => {
           <option value="linear">Linear</option>
           <option value="tree">Tree</option>
         </select>
+        {loading && <span style={{ marginLeft: 16 }}>Checking health...</span>}
+        {error && <span style={{ color: 'red', marginLeft: 16 }}>Health check failed</span>}
       </div>
-      <ReactFlow nodes={nodes} edges={edges} fitView>
+      <ReactFlow nodes={nodesWithHealth} edges={edges} fitView>
         <MiniMap />
         <Controls />
         <Background />
