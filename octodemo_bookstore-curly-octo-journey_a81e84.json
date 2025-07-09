@@ -30,7 +30,7 @@
         {
             "name": "org.javassist:javassist",
             "SPDXID": "SPDXRef-maven-org.javassist-javassist-3.20.0-GA-8e04c6",
-            "versionInfo": "3.20.0-GA",
+            "versionInfo": "1.0.0",
             "downloadLocation": "NOASSERTION",
             "filesAnalyzed": false,
             "externalRefs": [

@@ -1,6 +1,6 @@
 
 
-# Dependency Graph Viewer
+# SBOM Dependency Graph Viewer
 
 👉 **Try the web version here:** [https://danielmeixner.github.io/sbomdepsviewer/](https://danielmeixner.github.io/sbomdepsviewer/)
 
