@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import ReactFlow, { Background, Controls, MiniMap } from 'react-flow-renderer';
 import dagre from 'dagre';
 import useDependencyHealth from './useDependencyHealth';
+import { useTheme } from './useTheme.jsx';
 // Tree layout using dagre
 function getNodesTree(packages, idToLabel, edges) {
   const g = new dagre.graphlib.Graph();
@@ -104,6 +105,7 @@ function parseSpdxToGraph(data, layout) {
 
 const DependencyGraph = ({ data }) => {
   const [layout, setLayout] = useState('circular');
+  const { colors } = useTheme();
   const { nodes, edges } = useMemo(() => parseSpdxToGraph(data, layout), [data, layout]);
   const { health, loading, error } = useDependencyHealth(data.packages);
 
@@ -113,41 +115,76 @@ const DependencyGraph = ({ data }) => {
     const pkg = data.packages.find(p => p.SPDXID === node.id);
     const ref = pkg && pkg.externalRefs ? pkg.externalRefs.find(r => r.referenceType === 'purl') : null;
     const purl = ref ? ref.referenceLocator : null;
-    let color = '#90ee90'; // healthy default
+    let color = colors.nodeHealthy; // healthy default
     let title = node.data.label;
     if (purl && health[purl]) {
       if (health[purl].vulnerabilities && health[purl].vulnerabilities.length > 0) {
-        color = '#ffb3b3'; // red for vulnerable
+        color = colors.nodeVulnerable; // red for vulnerable
         title += `\nVulnerabilities: ${health[purl].vulnerabilities.length}`;
       } else if (health[purl].latestVersion && pkg.versionInfo && health[purl].latestVersion !== pkg.versionInfo) {
-        color = '#ffe066'; // yellow for outdated
+        color = colors.nodeOutdated; // yellow for outdated
         title += `\nOutdated: latest is ${health[purl].latestVersion}`;
       }
     }
     return {
       ...node,
-      style: { background: color, border: '1px solid #888' },
+      style: { background: color, border: `1px solid ${colors.nodeBorder}`, color: colors.text },
       data: { ...node.data, title },
     };
   });
 
   return (
-    <div style={{ width: '100%', height: '80vh', border: '1px solid #ccc', marginTop: 24 }}>
-      <div style={{ marginBottom: 12 }}>
-        <label style={{ marginRight: 8 }}>Layout:</label>
-        <select value={layout} onChange={e => setLayout(e.target.value)}>
+    <div style={{ 
+      width: '100%', 
+      height: '80vh', 
+      border: `1px solid ${colors.border}`, 
+      marginTop: 24,
+      backgroundColor: colors.cardBackground
+    }}>
+      <div style={{ 
+        marginBottom: 12, 
+        padding: 12,
+        backgroundColor: colors.background,
+        borderBottom: `1px solid ${colors.borderLight}`,
+        color: colors.text
+      }}>
+        <label style={{ marginRight: 8, color: colors.text }}>Layout:</label>
+        <select 
+          value={layout} 
+          onChange={e => setLayout(e.target.value)}
+          style={{
+            backgroundColor: colors.cardBackground,
+            color: colors.text,
+            border: `1px solid ${colors.border}`,
+            borderRadius: 4,
+            padding: '4px 8px'
+          }}
+        >
           <option value="circular">Circular</option>
           <option value="grid">Grid</option>
           <option value="linear">Linear</option>
           <option value="tree">Tree</option>
         </select>
-        {loading && <span style={{ marginLeft: 16 }}>Checking health...</span>}
-        {error && <span style={{ color: 'red', marginLeft: 16 }}>Health check failed</span>}
+        {loading && <span style={{ marginLeft: 16, color: colors.textMuted }}>Checking health...</span>}
+        {error && <span style={{ color: colors.error, marginLeft: 16 }}>Health check failed</span>}
       </div>
       <ReactFlow nodes={nodesWithHealth} edges={edges} fitView>
-        <MiniMap />
-        <Controls />
-        <Background />
+        <MiniMap 
+          style={{ 
+            backgroundColor: colors.cardBackground,
+            border: `1px solid ${colors.border}`
+          }}
+        />
+        <Controls 
+          style={{ 
+            button: { 
+              backgroundColor: colors.cardBackground,
+              color: colors.text,
+              border: `1px solid ${colors.border}`
+            }
+          }}
+        />
+        <Background color={colors.borderLight} />
       </ReactFlow>
     </div>
   );
