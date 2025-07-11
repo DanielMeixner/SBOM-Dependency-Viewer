@@ -19,25 +19,25 @@ A browser and desktop (Electron) app for visualizing and analyzing software depe
 The application features a clean interface with both light and dark theme support:
 
 **Light Mode:**
-![Light Mode](https://github.com/user-attachments/assets/ee7e8d6a-8d74-4c09-b584-0cef1501c609)
+![Light Mode](screenshots/light-mode.png)
 
 **Dark Mode:**
-![Dark Mode](https://github.com/user-attachments/assets/3337da26-4b8b-41ce-b43e-21fd4e0bbcc1)
+![Dark Mode](screenshots/dark-mode.png)
 
 ### Dependency Graph Visualization
 Once you upload an SPDX JSON file, the application visualizes the dependency graph with multiple layout options:
 
 **Circular Layout (Light Mode):**
-![Circular Layout - Light Mode](https://github.com/user-attachments/assets/45527f2e-eecc-479c-abf5-e1560132e1ba)
+![Circular Layout - Light Mode](screenshots/circular-layout-light.png)
 
 **Circular Layout (Dark Mode):**
-![Circular Layout - Dark Mode](https://github.com/user-attachments/assets/981cbb5d-872b-472b-ab16-9244ad41b060)
+![Circular Layout - Dark Mode](screenshots/circular-layout-dark.png)
 
 **Tree Layout (Light Mode):**
-![Tree Layout - Light Mode](https://github.com/user-attachments/assets/0a95719a-4562-44fa-93af-b8fa6333059d)
+![Tree Layout - Light Mode](screenshots/tree-layout-light.png)
 
 **Tree Layout (Dark Mode):**
-![Tree Layout - Dark Mode](placeholder-for-dark-mode-tree-view)
+![Tree Layout - Dark Mode](screenshots/tree-layout-dark.png)
 
 ## Creating an SPDX SBOM File
 You can easily generate an SPDX SBOM file for your repository using GitHub's built-in SBOM export feature:
