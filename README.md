@@ -8,6 +8,36 @@ A browser and desktop (Electron) app for visualizing and analyzing software depe
 
 ## Features
 - **SPDX JSON Upload:** Upload an SPDX JSON file to visualize its dependencies as a graph.
+- **Multiple Layouts:** Choose between circular, grid, linear, and tree layouts for the graph.
+- **Theme Support:** Switch between light and dark modes for optimal viewing experience.
+- **Dependency Health Check:** Each dependency node is colored and annotated based on its health status (healthy, outdated, vulnerable, unmaintained) using OSS Index.
+- **Interactive UI:** Hover for tooltips, select layouts, and explore the graph interactively.
+
+## Screenshots
+
+### Light and Dark Mode Support
+The application features a clean interface with both light and dark theme support:
+
+**Light Mode:**
+![Light Mode](screenshots/light-mode.png)
+
+**Dark Mode:**
+![Dark Mode](screenshots/dark-mode.png)
+
+### Dependency Graph Visualization
+Once you upload an SPDX JSON file, the application visualizes the dependency graph with multiple layout options:
+
+**Circular Layout (Light Mode):**
+![Circular Layout - Light Mode](screenshots/circular-layout-light.png)
+
+**Circular Layout (Dark Mode):**
+![Circular Layout - Dark Mode](screenshots/circular-layout-dark.png)
+
+**Tree Layout (Light Mode):**
+![Tree Layout - Light Mode](screenshots/tree-layout-light.png)
+
+**Tree Layout (Dark Mode):**
+![Tree Layout - Dark Mode](screenshots/tree-layout-dark.png)
 
 ## Creating an SPDX SBOM File
 You can easily generate an SPDX SBOM file for your repository using GitHub's built-in SBOM export feature:
@@ -20,9 +50,6 @@ You can easily generate an SPDX SBOM file for your repository using GitHub's bui
 6. Download the file in SPDX JSON format and upload it to this app.
 
 This feature is available for most public repositories and for private repositories with GitHub Advanced Security enabled.
-- **Multiple Layouts:** Choose between circular, grid, linear, and tree layouts for the graph.
-- **Dependency Health Check:** Each dependency node is colored and annotated based on its health status (healthy, outdated, vulnerable, unmaintained) using OSS Index.
-- **Interactive UI:** Hover for tooltips, select layouts, and explore the graph interactively.
 
 ## Versions
 
