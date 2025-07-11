@@ -28,66 +28,305 @@ function App() {
 
   return (
     <div style={{ 
-      padding: 24, 
-      fontFamily: 'sans-serif',
-      backgroundColor: colors.background,
+      minHeight: '100vh',
+      background: colors.background,
       color: colors.text,
-      minHeight: '100vh'
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+      padding: '2rem',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '2rem'
     }}>
-      <div style={{ 
+      {/* Header with glassmorphism effect */}
+      <header style={{ 
+        background: colors.glassBackground,
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        border: `1px solid ${colors.glassBorder}`,
+        borderRadius: '20px',
+        padding: '2rem',
+        boxShadow: colors.shadowGlass,
         display: 'flex', 
         justifyContent: 'space-between', 
-        alignItems: 'center',
-        marginBottom: 16
+        alignItems: 'center'
       }}>
-        <h1 style={{ margin: 0, color: colors.text }}>SBOM Dependency Graph Viewer</h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{
+            width: '48px',
+            height: '48px',
+            borderRadius: '12px',
+            background: colors.primary,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '24px',
+            boxShadow: colors.shadowMd
+          }}>
+            📊
+          </div>
+          <h1 style={{ 
+            margin: 0, 
+            color: colors.textAccent,
+            fontSize: '2rem',
+            fontWeight: '700',
+            letterSpacing: '-0.025em'
+          }}>
+            SBOM Dependency Graph Viewer
+          </h1>
+        </div>
         <button 
           onClick={toggleTheme}
           style={{
-            padding: '8px 16px',
-            backgroundColor: colors.primary,
+            background: colors.primary,
             color: '#ffffff',
             border: 'none',
-            borderRadius: 4,
+            borderRadius: '16px',
+            padding: '12px 24px',
             cursor: 'pointer',
-            fontSize: 14,
+            fontSize: '16px',
+            fontWeight: '600',
             display: 'flex',
             alignItems: 'center',
-            gap: 6
+            gap: '8px',
+            boxShadow: colors.shadowMd,
+            transition: 'all 0.3s ease',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = 'translateY(-2px)';
+            e.target.style.boxShadow = colors.shadowLg;
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = 'translateY(0)';
+            e.target.style.boxShadow = colors.shadowMd;
           }}
           title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
         >
-          {theme === 'light' ? '🌙' : '☀️'}
+          <span style={{ fontSize: '18px' }}>
+            {theme === 'light' ? '🌙' : '☀️'}
+          </span>
           {theme === 'light' ? 'Dark' : 'Light'}
         </button>
-      </div>
-      
-      <input type="file" accept="application/json" onChange={handleFileChange} />
-      
-      <div style={{ 
-        fontSize: 14, 
-        margin: '8px 0 16px 0', 
-        color: colors.textMuted 
+      </header>
+
+      {/* Upload Section */}
+      <section style={{
+        background: colors.cardBackground,
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        border: `1px solid ${colors.cardBorder}`,
+        borderRadius: '20px',
+        padding: '2rem',
+        boxShadow: colors.shadowGlass,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1.5rem'
       }}>
-        <b>Tip:</b> You can generate an SPDX SBOM file for your repository on GitHub by going to <b>Insights &rarr; Dependency graph</b> and clicking the <b>Export SBOM</b> button.
-      </div>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1rem',
+          marginBottom: '1rem'
+        }}>
+          <div style={{
+            width: '40px',
+            height: '40px',
+            borderRadius: '10px',
+            background: colors.primaryGlass,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '20px'
+          }}>
+            📁
+          </div>
+          <h2 style={{
+            margin: 0,
+            fontSize: '1.5rem',
+            fontWeight: '600',
+            color: colors.textAccent
+          }}>
+            Upload SPDX File
+          </h2>
+        </div>
+        
+        <div style={{
+          position: 'relative',
+          display: 'inline-block'
+        }}>
+          <input 
+            type="file" 
+            accept="application/json" 
+            onChange={handleFileChange}
+            style={{
+              position: 'absolute',
+              opacity: 0,
+              width: '100%',
+              height: '100%',
+              cursor: 'pointer'
+            }}
+          />
+          <div style={{
+            background: colors.surfaceBackground,
+            border: `2px dashed ${colors.border}`,
+            borderRadius: '16px',
+            padding: '2rem',
+            textAlign: 'center',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease',
+            minHeight: '120px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '1rem'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.borderColor = colors.primarySolid;
+            e.target.style.background = colors.glassAccent;
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.borderColor = colors.border;
+            e.target.style.background = colors.surfaceBackground;
+          }}
+          >
+            <div style={{ fontSize: '48px', opacity: 0.6 }}>📄</div>
+            <div style={{ 
+              fontSize: '18px', 
+              fontWeight: '600',
+              color: colors.textAccent 
+            }}>
+              Choose SPDX JSON File
+            </div>
+            <div style={{ 
+              fontSize: '14px', 
+              color: colors.textMuted 
+            }}>
+              Or drag and drop your file here
+            </div>
+          </div>
+        </div>
+        
+        <div style={{
+          background: colors.glassAccent,
+          border: `1px solid ${colors.borderLight}`,
+          borderRadius: '12px',
+          padding: '1.5rem',
+          display: 'flex',
+          alignItems: 'flex-start',
+          gap: '1rem'
+        }}>
+          <div style={{
+            fontSize: '20px',
+            marginTop: '2px'
+          }}>
+            💡
+          </div>
+          <div>
+            <div style={{ 
+              fontSize: '16px', 
+              fontWeight: '600',
+              color: colors.textAccent,
+              marginBottom: '0.5rem'
+            }}>
+              Tip:
+            </div>
+            <div style={{ 
+              fontSize: '14px', 
+              color: colors.textMuted,
+              lineHeight: '1.5'
+            }}>
+              You can generate an SPDX SBOM file for your repository on GitHub by going to{' '}
+              <strong style={{ color: colors.textAccent }}>Insights → Dependency graph</strong>{' '}
+              and clicking the{' '}
+              <strong style={{ color: colors.textAccent }}>Export SBOM</strong>{' '}
+              button.
+            </div>
+          </div>
+        </div>
+      </section>
       
       {!isElectron && (
         <div style={{ 
-          color: colors.warning, 
-          background: colors.warningBackground, 
-          border: `1px solid ${colors.warningBorder}`, 
-          padding: 12, 
-          margin: '16px 0', 
-          borderRadius: 4 
+          background: colors.warningBackground,
+          border: `1px solid ${colors.warningBorder}`,
+          borderRadius: '16px',
+          padding: '1.5rem',
+          display: 'flex',
+          alignItems: 'flex-start',
+          gap: '1rem',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)'
         }}>
-          <b>Note:</b> Dependency health check only works in the Electron (desktop) app. In the browser, health status will not be available due to security restrictions.
+          <div style={{ fontSize: '20px', marginTop: '2px' }}>⚠️</div>
+          <div>
+            <div style={{ 
+              fontSize: '16px', 
+              fontWeight: '600',
+              color: colors.warning,
+              marginBottom: '0.5rem'
+            }}>
+              Note:
+            </div>
+            <div style={{ 
+              fontSize: '14px', 
+              color: colors.textMuted,
+              lineHeight: '1.5'
+            }}>
+              Dependency health check only works in the Electron (desktop) app. In the browser, health status will not be available due to security restrictions.
+            </div>
+          </div>
         </div>
       )}
       
-      {error && <div style={{ color: colors.error }}>{error}</div>}
+      {error && (
+        <div style={{
+          background: 'rgba(239, 68, 68, 0.1)',
+          border: '1px solid rgba(239, 68, 68, 0.3)',
+          borderRadius: '16px',
+          padding: '1.5rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1rem',
+          color: colors.error
+        }}>
+          <div style={{ fontSize: '20px' }}>❌</div>
+          <div style={{ fontSize: '16px', fontWeight: '600' }}>{error}</div>
+        </div>
+      )}
+      
       {jsonData && <DependencyGraph data={jsonData} />}
-      {!jsonData && <p style={{ color: colors.textMuted }}>Upload an SPDX JSON file to visualize dependencies.</p>}
+      
+      {!jsonData && (
+        <div style={{
+          background: colors.cardBackground,
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          border: `1px solid ${colors.cardBorder}`,
+          borderRadius: '20px',
+          padding: '3rem',
+          textAlign: 'center',
+          boxShadow: colors.shadowGlass
+        }}>
+          <div style={{ fontSize: '64px', opacity: 0.4, marginBottom: '1rem' }}>📊</div>
+          <div style={{ 
+            fontSize: '1.25rem', 
+            fontWeight: '600',
+            color: colors.textAccent,
+            marginBottom: '0.5rem'
+          }}>
+            Ready to visualize dependencies
+          </div>
+          <div style={{ 
+            fontSize: '16px', 
+            color: colors.textMuted,
+            lineHeight: '1.5'
+          }}>
+            Upload an SPDX JSON file to get started with interactive dependency graph visualization.
+          </div>
+        </div>
+      )}
     </div>
   );
 }

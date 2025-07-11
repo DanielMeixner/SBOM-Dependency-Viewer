@@ -128,64 +128,167 @@ const DependencyGraph = ({ data }) => {
     }
     return {
       ...node,
-      style: { background: color, border: `1px solid ${colors.nodeBorder}`, color: colors.text },
+      style: { 
+        background: color, 
+        border: `1px solid ${colors.nodeBorder}`, 
+        color: colors.text,
+        borderRadius: '12px',
+        padding: '8px 12px',
+        fontSize: '12px',
+        fontWeight: '500',
+        boxShadow: colors.shadowMd,
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)'
+      },
       data: { ...node.data, title },
     };
   });
 
   return (
     <div style={{ 
-      width: '100%', 
-      height: '80vh', 
-      border: `1px solid ${colors.border}`, 
-      marginTop: 24,
-      backgroundColor: colors.cardBackground
+      background: colors.cardBackground,
+      backdropFilter: 'blur(20px)',
+      WebkitBackdropFilter: 'blur(20px)',
+      border: `1px solid ${colors.cardBorder}`,
+      borderRadius: '20px',
+      overflow: 'hidden',
+      boxShadow: colors.shadowGlass,
+      display: 'flex',
+      flexDirection: 'column'
     }}>
       <div style={{ 
-        marginBottom: 12, 
-        padding: 12,
-        backgroundColor: colors.background,
+        padding: '1.5rem',
+        background: colors.glassBackground,
         borderBottom: `1px solid ${colors.borderLight}`,
-        color: colors.text
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: '1rem'
       }}>
-        <label style={{ marginRight: 8, color: colors.text }}>Layout:</label>
-        <select 
-          value={layout} 
-          onChange={e => setLayout(e.target.value)}
-          style={{
-            backgroundColor: colors.cardBackground,
-            color: colors.text,
-            border: `1px solid ${colors.border}`,
-            borderRadius: 4,
-            padding: '4px 8px'
-          }}
-        >
-          <option value="circular">Circular</option>
-          <option value="grid">Grid</option>
-          <option value="linear">Linear</option>
-          <option value="tree">Tree</option>
-        </select>
-        {loading && <span style={{ marginLeft: 16, color: colors.textMuted }}>Checking health...</span>}
-        {error && <span style={{ color: colors.error, marginLeft: 16 }}>Health check failed</span>}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{
+            width: '40px',
+            height: '40px',
+            borderRadius: '10px',
+            background: colors.primaryGlass,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '20px'
+          }}>
+            🔗
+          </div>
+          <h3 style={{
+            margin: 0,
+            fontSize: '1.25rem',
+            fontWeight: '600',
+            color: colors.textAccent
+          }}>
+            Dependency Graph
+          </h3>
+        </div>
+        
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <label style={{ 
+              fontSize: '14px',
+              fontWeight: '600',
+              color: colors.textAccent
+            }}>
+              Layout:
+            </label>
+            <select 
+              value={layout} 
+              onChange={e => setLayout(e.target.value)}
+              style={{
+                background: colors.surfaceBackground,
+                color: colors.text,
+                border: `1px solid ${colors.border}`,
+                borderRadius: '8px',
+                padding: '8px 12px',
+                fontSize: '14px',
+                fontWeight: '500',
+                cursor: 'pointer',
+                outline: 'none'
+              }}
+            >
+              <option value="circular">🔄 Circular</option>
+              <option value="grid">⊞ Grid</option>
+              <option value="linear">➤ Linear</option>
+              <option value="tree">🌳 Tree</option>
+            </select>
+          </div>
+          
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            {loading && (
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '0.5rem',
+                fontSize: '14px',
+                color: colors.textMuted
+              }}>
+                <div style={{
+                  width: '16px',
+                  height: '16px',
+                  border: `2px solid ${colors.borderLight}`,
+                  borderTop: `2px solid ${colors.primarySolid}`,
+                  borderRadius: '50%',
+                  animation: 'spin 1s linear infinite'
+                }}></div>
+                Checking health...
+              </div>
+            )}
+            {error && (
+              <div style={{ 
+                fontSize: '14px', 
+                color: colors.error,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem'
+              }}>
+                <span>⚠️</span>
+                Health check failed
+              </div>
+            )}
+          </div>
+        </div>
       </div>
-      <ReactFlow nodes={nodesWithHealth} edges={edges} fitView>
-        <MiniMap 
-          style={{ 
-            backgroundColor: colors.cardBackground,
-            border: `1px solid ${colors.border}`
-          }}
-        />
-        <Controls 
-          style={{ 
-            button: { 
-              backgroundColor: colors.cardBackground,
-              color: colors.text,
-              border: `1px solid ${colors.border}`
-            }
-          }}
-        />
-        <Background color={colors.borderLight} />
-      </ReactFlow>
+      
+      <div style={{ 
+        height: '70vh',
+        position: 'relative',
+        background: colors.backgroundSolid
+      }}>
+        <ReactFlow nodes={nodesWithHealth} edges={edges} fitView>
+          <MiniMap 
+            style={{ 
+              background: colors.cardBackground,
+              border: `1px solid ${colors.cardBorder}`,
+              borderRadius: '8px',
+              overflow: 'hidden'
+            }}
+          />
+          <Controls 
+            style={{ 
+              button: { 
+                background: colors.cardBackground,
+                color: colors.text,
+                border: `1px solid ${colors.cardBorder}`,
+                borderRadius: '8px'
+              }
+            }}
+          />
+          <Background color={colors.borderLight} />
+        </ReactFlow>
+      </div>
+      
+      <style jsx>{`
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `}</style>
     </div>
   );
 };
