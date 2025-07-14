@@ -102,6 +102,6 @@ jobs:
           files: dist_electron/**
           body: |
             You can also try the web version of this app at:
-            https://danielmeixner.github.io/sbomdepsviewer/
+            https://danielmeixner.github.io/SBOM-Dependency-Viewer/
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

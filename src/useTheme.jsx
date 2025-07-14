@@ -107,12 +107,12 @@ export const themes = {
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('sbomdepsviewer-theme');
+    const savedTheme = localStorage.getItem('SBOM-Dependency-Viewer-theme');
     return savedTheme || 'light';
   });
 
   useEffect(() => {
-    localStorage.setItem('sbomdepsviewer-theme', theme);
+    localStorage.setItem('SBOM-Dependency-Viewer-theme', theme);
     // Update body background for consistency
     document.body.style.background = themes[theme].background;
     document.body.style.color = themes[theme].text;
