@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import DependencyGraph from './DependencyGraph';
 import { useTheme } from './useTheme.jsx';
+import { useFontSize } from './useFontSize.jsx';
 
 function App() {
   const [jsonData, setJsonData] = useState(null);
   const [error, setError] = useState(null);
   const { theme, toggleTheme, colors } = useTheme();
+  const { increaseFontSize, decreaseFontSize, canIncrease, canDecrease, fontSize } = useFontSize();
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -74,40 +76,127 @@ function App() {
             SBOM Dependency Graph Viewer
           </h1>
         </div>
-        <button 
-          onClick={toggleTheme}
-          style={{
-            background: colors.primary,
-            color: '#ffffff',
-            border: 'none',
-            borderRadius: '16px',
-            padding: '12px 24px',
-            cursor: 'pointer',
-            fontSize: '16px',
-            fontWeight: '600',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            boxShadow: colors.shadowMd,
-            transition: 'all 0.3s ease',
-            backdropFilter: 'blur(10px)',
-            WebkitBackdropFilter: 'blur(10px)'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.transform = 'translateY(-2px)';
-            e.target.style.boxShadow = colors.shadowLg;
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.transform = 'translateY(0)';
-            e.target.style.boxShadow = colors.shadowMd;
-          }}
-          title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        >
-          <span style={{ fontSize: '18px' }}>
-            {theme === 'light' ? '🌙' : '☀️'}
-          </span>
-          {theme === 'light' ? 'Dark' : 'Light'}
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          {/* Font Size Controls */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <button 
+              onClick={decreaseFontSize}
+              disabled={!canDecrease}
+              style={{
+                background: canDecrease ? colors.primary : colors.glassBackground,
+                color: canDecrease ? '#ffffff' : colors.textMuted,
+                border: 'none',
+                borderRadius: '12px',
+                padding: '10px 12px',
+                cursor: canDecrease ? 'pointer' : 'not-allowed',
+                fontSize: '14px',
+                fontWeight: '600',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: canDecrease ? colors.shadowMd : 'none',
+                transition: 'all 0.3s ease',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                opacity: canDecrease ? 1 : 0.5,
+                minWidth: '40px',
+                height: '40px'
+              }}
+              onMouseEnter={(e) => {
+                if (canDecrease) {
+                  e.target.style.transform = 'translateY(-2px)';
+                  e.target.style.boxShadow = colors.shadowLg;
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (canDecrease) {
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = colors.shadowMd;
+                }
+              }}
+              title="Decrease font size"
+              aria-label="Decrease font size"
+            >
+              A-
+            </button>
+            <button 
+              onClick={increaseFontSize}
+              disabled={!canIncrease}
+              style={{
+                background: canIncrease ? colors.primary : colors.glassBackground,
+                color: canIncrease ? '#ffffff' : colors.textMuted,
+                border: 'none',
+                borderRadius: '12px',
+                padding: '10px 12px',
+                cursor: canIncrease ? 'pointer' : 'not-allowed',
+                fontSize: '14px',
+                fontWeight: '600',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: canIncrease ? colors.shadowMd : 'none',
+                transition: 'all 0.3s ease',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                opacity: canIncrease ? 1 : 0.5,
+                minWidth: '40px',
+                height: '40px'
+              }}
+              onMouseEnter={(e) => {
+                if (canIncrease) {
+                  e.target.style.transform = 'translateY(-2px)';
+                  e.target.style.boxShadow = colors.shadowLg;
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (canIncrease) {
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = colors.shadowMd;
+                }
+              }}
+              title="Increase font size"
+              aria-label="Increase font size"
+            >
+              A+
+            </button>
+          </div>
+          
+          {/* Theme Toggle */}
+          <button 
+            onClick={toggleTheme}
+            style={{
+              background: colors.primary,
+              color: '#ffffff',
+              border: 'none',
+              borderRadius: '16px',
+              padding: '12px 24px',
+              cursor: 'pointer',
+              fontSize: '16px',
+              fontWeight: '600',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              boxShadow: colors.shadowMd,
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = colors.shadowLg;
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = colors.shadowMd;
+            }}
+            title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            <span style={{ fontSize: '18px' }}>
+              {theme === 'light' ? '🌙' : '☀️'}
+            </span>
+            {theme === 'light' ? 'Dark' : 'Light'}
+          </button>
+        </div>
       </header>
 
       {/* Upload Section */}
