@@ -16,12 +16,12 @@ export const fontSizeOrder = ['small', 'medium', 'large', 'xlarge', 'xxlarge'];
 
 export const FontSizeProvider = ({ children }) => {
   const [fontSize, setFontSize] = useState(() => {
-    const savedFontSize = localStorage.getItem('sbomdepsviewer-font-size');
+    const savedFontSize = localStorage.getItem('SBOM-Dependency-Viewer-font-size');
     return savedFontSize || 'medium';
   });
 
   useEffect(() => {
-    localStorage.setItem('sbomdepsviewer-font-size', fontSize);
+    localStorage.setItem('SBOM-Dependency-Viewer-font-size', fontSize);
     
     // Apply font size to the root element
     const rootElement = document.documentElement;

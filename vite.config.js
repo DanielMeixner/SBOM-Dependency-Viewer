@@ -6,7 +6,7 @@ const isElectron = process.env.VITE_ELECTRON === 'true';
 
 export default defineConfig({
   plugins: [react()],
-  base: isElectron ? './' : '/sbomdepsviewer/',
+  base: isElectron ? './' : '/SBOM-Dependency-Viewer/',
   build: {
     outDir: 'dist',
   },

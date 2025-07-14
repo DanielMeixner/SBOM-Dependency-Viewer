@@ -22,7 +22,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE: "/sbomdepsviewer/"
+          VITE_BASE: "/SBOM-Dependency-Viewer/"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
